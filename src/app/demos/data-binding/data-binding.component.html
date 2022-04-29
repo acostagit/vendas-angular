@@ -1,0 +1,39 @@
+<div class="container main-container">
+    <h3>Intepolation</h3>
+
+    <!-- <p>O número de cliques é: {{ contadorClique}}</p> -->
+    <p [ngClass]="{
+        'text-secondary':contadorClique < 3,
+        'text-success':contadorClique >= 3,
+        'text-warning':contadorClique >= 5,
+        'text-danger':contadorClique >= 9
+    }">O número de cliques é: {{ contadorClique}}
+
+    </p>
+    
+    <hr>
+    <p>Property Binding</p>
+    <button class="btn btn-info" [disabled]="contadorClique >=10">Contador</button><br><br>
+    <img [src]="urlImagem" height="50px" width="100px">
+    <hr>
+    <br><br>
+    <p>Event Binding</p>
+    <button class="btn btn-warning" (click)='addClique()'>Event</button>
+    <button class="btn btn-danger" (click)='zerarContador()' [disabled]='contadorClique < 10'>Zerar</button>
+
+    <hr>
+    <br><br>
+    <p>Two  Way Binding</p>
+    <!-- <input type="text" (keyup)='KeyUp($event)' placeholder="Digite seu nome">
+    <br>
+    <label>Seu nome é.. {{ nome }}</label> -->
+    <!-- <input type="text" [ngModel]="nome" (ngModelChange)='nome = $event' placeholder="Entry your name"> -->
+    <hr>
+    <br>
+    <input type="text" [(ngModel)]="nome" placeholder="Entry your name">
+    <hr>
+    <label [ngClass]='nome'>{{ nome }}</label>
+    <!-- <label class="{{nome}}">{{ nome }}</label> -->
+    <hr>
+    <label>Formulário de Cadastro</label>
+</div>
